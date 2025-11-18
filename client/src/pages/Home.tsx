@@ -1,6 +1,7 @@
 import Navigation from '@/components/Navigation';
 import HeroCarousel from '@/components/HeroCarousel';
 import FeaturedParts from '@/components/FeaturedParts';
+import SpecialOffers from '@/components/SpecialOffers';
 import PartsCategories from '@/components/PartsCategories';
 import CarManufacturers from '@/components/CarManufacturers';
 import QualityStandards from '@/components/QualityStandards';
@@ -14,6 +15,7 @@ export default function Home() {
       <main>
         <HeroCarousel />
         <FeaturedParts />
+        <SpecialOffers />
         <PartsCategories />
         <CarManufacturers />
         <QualityStandards />
