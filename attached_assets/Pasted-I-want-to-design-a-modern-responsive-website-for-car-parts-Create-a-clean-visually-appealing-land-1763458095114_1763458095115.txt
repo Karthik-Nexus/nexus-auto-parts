@@ -1,0 +1,173 @@
+I want to design a modern, responsive website for car parts. Create a clean, visually appealing landing page optimized for mobile and desktop. Use a bold automotive theme with strong contrasts, clean typography, and smooth animations. The target audience is existing/old users, so the interface should feel familiar, simple to navigate, and trustworthy.
+
+🔹 Landing Page Requirements
+1. Responsive Navigation Bar
+
+Sticky header with logo, category links, search bar, and login/cart icons.
+
+Mobile version should show a hamburger menu with a slide-in drawer.
+
+Smooth transition on scroll (shrink or shadow).
+
+2. Section 1 – Offers / New Arrivals (Hero Banner)
+
+Full-width carousel / hero slider.
+
+Showcase discounts, new arrivals, and trending parts.
+
+Clear CTAs like Shop Now, Explore Parts, View Latest.
+
+3. Section 2 – Featured Auto Parts
+
+Horizontal scrollable cards (perfect for mobile).
+
+Each part card includes:
+
+Image
+
+Part name
+
+Price
+
+Availability badge
+
+“Quick View” or “Add to Cart” button
+
+Smooth sliding animations on scroll.
+
+4. Section 3 – Available Brands
+
+Grid layout of brand logos.
+
+Hover effects with subtle scale-up.
+
+Responsive:
+
+Mobile: 2–3 per row
+
+Desktop: 5–6 per row
+
+5. Section 4 – Car Manufacturer Cards
+
+Cards with popular car companies (Toyota, Hyundai, BMW, Kia, etc.)
+
+Clicking a card redirects to a filtered product listing page.
+
+Hover animation + shadow.
+
+6. Footer Section (New Requirement)
+
+Create a clean and informative footer divided into multiple columns:
+
+Column A – Company Info
+
+About Us
+
+Contact Us
+
+Careers
+
+Privacy Policy
+
+Terms & Conditions
+
+Column B – Customer Support
+
+Track Order
+
+Return & Refund Policy
+
+Warranty Info
+
+FAQs
+
+Help Center
+
+Column C – Popular Categories
+
+Engine Parts
+
+Body Parts
+
+Brakes & Suspension
+
+Electrical Components
+
+Accessories
+
+Column D – Connect With Us
+
+Social media icons (Facebook, Instagram, YouTube)
+
+WhatsApp support
+
+Email subscription input (Newsletter)
+
+Footer Bottom Line
+
+© Year CarPartsHub — All Rights Reserved
+
+Designed for trusted returning users
+
+Payment icons (Visa, Mastercard, UPI, etc.)
+
+📦 Product Listing Page Requirements
+Left Sidebar Filters
+
+Price slider
+
+Brand
+
+Model
+
+Car Year
+
+Category
+
+Availability toggle
+
+Mobile → collapsible accordion filters.
+
+Product Grid
+
+Clean cards with pricing, images, specs, ratings, availability.
+
+Sorting options:
+
+Price (Low→High)
+
+Price (High→Low)
+
+Newest
+
+Best Rated
+
+In-Stock Only
+
+🤖 Chatbot
+
+Floating round button at bottom-right.
+
+Opens a chat window with:
+
+Previous orders
+
+Quick reorder
+
+Frequently purchased items
+
+Personalized suggestions for old users
+
+Lightweight and friendly design.
+
+🎨 General UI Guidelines
+
+Fully responsive (mobile-first).
+
+Clean spacing, proper padding, rounded edges.
+
+Automotive theme: dark blues, grey metallic, orange highlights.
+
+Smooth scroll and hover animations.
+
+Consistent grid structure and typography.
