@@ -68,10 +68,20 @@ export async function setupVite(app: Express, server: Server) {
 }
 
 export function serveStatic(app: Express) {
-  const distPath = path.resolve(process.cwd(), "dist", "public");
+  let distPath = path.resolve(process.cwd(), "dist", "public");
 
   if (!fs.existsSync(distPath)) {
-    console.warn(`Build directory not found at ${distPath}. Static serving will be disabled.`);
+    // Fallback to local public or other structures
+    distPath = path.resolve(import.meta.dirname, "public");
+  }
+
+  if (!fs.existsSync(distPath)) {
+    // Try one more common Vercel structure
+    distPath = path.resolve(process.cwd(), "public");
+  }
+
+  if (!fs.existsSync(distPath)) {
+    console.warn(`Build directory not found. Static serving will be disabled. Tried: ${distPath}`);
     return;
   }
 

@@ -46,8 +46,11 @@ app.use((req, res, next) => {
   next();
 });
 
+import { createServer } from "http";
+
 (async () => {
-  const server = await registerRoutes(app);
+  await registerRoutes(app);
+  const server = createServer(app);
 
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
