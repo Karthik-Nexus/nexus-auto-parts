@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import HeroSearchTool from './HeroSearchTool';
 import heroBanner1 from '@assets/generated_images/Hero_banner_brake_parts_31ee722a.png';
 import heroBanner2 from '@assets/generated_images/Hero_banner_filters_sale_31972f9d.png';
 import heroBanner3 from '@assets/generated_images/Hero_banner_suspension_parts_993ab951.png';
@@ -8,22 +9,22 @@ import heroBanner3 from '@assets/generated_images/Hero_banner_suspension_parts_9
 const slides = [
   {
     image: heroBanner1,
-    title: 'New Arrivals',
-    subtitle: 'Premium Brake Systems',
-    discount: '30% OFF',
-    cta: 'Shop Now',
+    title: 'Find the Best Auto Parts',
+    subtitle: 'Your Source for Multi-Brand OEM Auto Parts and Accessories',
+    discount: 'Save up to 70%',
+    cta: 'Call for 10% Off',
   },
   {
     image: heroBanner2,
     title: 'Summer Sale',
-    subtitle: 'Filters & Maintenance',
-    discount: 'Up to 40% OFF',
+    subtitle: 'Over 20 Million Auto Parts',
+    discount: 'Up to 70% OFF',
     cta: 'Explore Parts',
   },
   {
     image: heroBanner3,
-    title: 'Trending Parts',
-    subtitle: 'Performance Suspension',
+    title: 'OEM Quality Parts',
+    subtitle: 'Rigorously Tested & Reliable',
     discount: 'Limited Time',
     cta: 'View Latest',
   },
@@ -47,9 +48,8 @@ export default function HeroCarousel() {
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`absolute inset-0 transition-opacity duration-700 ${
-            index === currentSlide ? 'opacity-100' : 'opacity-0'
-          }`}
+          className={`absolute inset-0 transition-opacity duration-700 ${index === currentSlide ? 'opacity-100' : 'opacity-0'
+            }`}
         >
           <div className="relative w-full h-full">
             <img
@@ -60,23 +60,34 @@ export default function HeroCarousel() {
             <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30" />
             <div className="absolute inset-0 flex items-center">
               <div className="container mx-auto px-4">
-                <div className="max-w-2xl">
-                  <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">
-                    {slide.title}
-                  </h2>
-                  <p className="text-xl md:text-2xl text-white/90 mb-2">
-                    {slide.subtitle}
-                  </p>
-                  <p className="text-3xl md:text-4xl font-bold text-ring mb-6">
-                    {slide.discount}
-                  </p>
-                  <Button
-                    size="lg"
-                    className="bg-ring hover:bg-ring/90 text-white border-0"
-                    data-testid={`button-cta-${index}`}
-                  >
-                    {slide.cta}
-                  </Button>
+                <div className="max-w-none w-full flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 pl-4 md:pl-12 pr-4 md:pr-12">
+                  <div className="lg:w-1/2 text-left space-y-6">
+                    <div>
+                      <h2 className="text-3xl md:text-5xl font-bold text-white mb-2 leading-tight drop-shadow-md">
+                        {slide.title}
+                      </h2>
+                      <p className="text-lg md:text-xl text-white/90 font-light drop-shadow-sm">
+                        {slide.subtitle}
+                      </p>
+                    </div>
+                    <div className="inline-block bg-white/10 backdrop-blur-md rounded-lg px-3 py-1.5 border-l-4 border-primary">
+                      <p className="text-2xl md:text-3xl font-bold text-white">
+                        {slide.discount}
+                      </p>
+                    </div>
+                    <div>
+                      <Button
+                        className="bg-primary hover:bg-primary/90 text-white border-0 text-base px-6 py-5 rounded-full shadow-lg hover:translate-y-[-1px] transition-all"
+                        data-testid={`button-cta-${index}`}
+                      >
+                        {slide.cta}
+                      </Button>
+                    </div>
+                  </div>
+
+                  <div className="lg:w-1/2 flex justify-center lg:justify-end w-full max-w-sm lg:max-w-none">
+                    <HeroSearchTool />
+                  </div>
                 </div>
               </div>
             </div>
@@ -87,7 +98,7 @@ export default function HeroCarousel() {
       <Button
         variant="ghost"
         size="icon"
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white"
+        className="!absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white z-10"
         onClick={prevSlide}
         data-testid="button-prev-slide"
       >
@@ -96,7 +107,7 @@ export default function HeroCarousel() {
       <Button
         variant="ghost"
         size="icon"
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white"
+        className="!absolute right-4 left-auto top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white z-10"
         onClick={nextSlide}
         data-testid="button-next-slide"
       >
@@ -108,9 +119,8 @@ export default function HeroCarousel() {
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`w-2 h-2 rounded-full transition-all ${
-              index === currentSlide ? 'bg-ring w-8' : 'bg-white/50'
-            }`}
+            className={`w-2 h-2 rounded-full transition-all ${index === currentSlide ? 'bg-ring w-8' : 'bg-white/50'
+              }`}
             data-testid={`button-slide-${index}`}
           />
         ))}

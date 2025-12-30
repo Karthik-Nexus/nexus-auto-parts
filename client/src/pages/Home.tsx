@@ -1,12 +1,13 @@
-import Navigation from '@/components/Navigation';
-import HeroCarousel from '@/components/HeroCarousel';
-import FeaturedParts from '@/components/FeaturedParts';
-import SpecialOffers from '@/components/SpecialOffers';
-import PartsCategories from '@/components/PartsCategories';
-import CarManufacturers from '@/components/CarManufacturers';
-import QualityStandards from '@/components/QualityStandards';
-import Footer from '@/components/Footer';
-import Chatbot from '@/components/Chatbot';
+import Navigation from "@/components/Navigation";
+import HeroCarousel from "@/components/HeroCarousel";
+import FeaturedParts from "@/components/FeaturedParts";
+import Brands from "@/components/Brands";
+
+import PartsCategories from "@/components/PartsCategories";
+import CarManufacturers from "@/components/CarManufacturers";
+import QualityStandards from "@/components/QualityStandards";
+import Footer from "@/components/Footer";
+// Removed Chatbot local import to use global one in App.tsx
 
 export default function Home() {
   return (
@@ -15,13 +16,13 @@ export default function Home() {
       <main>
         <HeroCarousel />
         <FeaturedParts />
-        <SpecialOffers />
+
         <PartsCategories />
+        <Brands />
         <CarManufacturers />
         <QualityStandards />
       </main>
       <Footer />
-      <Chatbot />
     </div>
   );
 }
