@@ -20,6 +20,7 @@ function Router() {
 }
 
 import Chatbot from "@/components/Chatbot";
+import CallWidget from "@/components/CallWidget";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Toaster />
         <Router />
         <Chatbot />
+        <CallWidget />
       </TooltipProvider>
     </QueryClientProvider>
   );

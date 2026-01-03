@@ -40,6 +40,7 @@ export default function HeroSearchTool() {
                         <option value="">Click here to Pick Part</option>
                         <option value="Engine">Engine</option>
                         <option value="Transmission">Transmission</option>
+                        <option value="Brands">Brands</option>
                     </select>
                 </div>
 

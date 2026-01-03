@@ -1,5 +1,5 @@
 import { Facebook, Instagram, Youtube, MessageCircle, Mail } from 'lucide-react';
-import { SiVisa, SiMastercard } from 'react-icons/si';
+import { SiVisa, SiMastercard, SiAmericanexpress, SiPaypal } from 'react-icons/si';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 
@@ -20,7 +20,6 @@ const footerLinks = {
   ],
   categories: [
     { name: 'Engine Parts', href: '/products?category=engine' },
-    { name: 'Body Parts', href: '/products?category=body' },
     { name: 'Brakes & Suspension', href: '/products?category=brakes' },
     { name: 'Electrical Components', href: '/products?category=electrical' },
     { name: 'Accessories', href: '/products?category=accessories' },
@@ -107,9 +106,9 @@ export default function Footer() {
             <div className="flex items-center gap-3">
               <SiVisa className="w-10 h-6 text-muted-foreground" />
               <SiMastercard className="w-10 h-6 text-muted-foreground" />
-              <div className="px-3 py-1 border rounded text-xs font-semibold text-muted-foreground">
-                UPI
-              </div>
+              <SiAmericanexpress className="w-10 h-6 text-muted-foreground" />
+              <div className="px-2 py-1 border rounded text-xs font-semibold text-muted-foreground">Discover</div>
+              <SiPaypal className="w-10 h-6 text-muted-foreground" />
             </div>
           </div>
         </div>

@@ -48,7 +48,7 @@ export default function PartsCategories() {
                       />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-sm mb-1">{category.name}</h3>
+                      <h3 className="font-semibold text-base mb-1">{category.name}</h3>
                       <p className="text-xs text-muted-foreground">{category.description}</p>
                     </div>
                   </CardContent>

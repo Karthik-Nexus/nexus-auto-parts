@@ -10,7 +10,6 @@ const categories = [
   "Brakes",
   "Suspension",
   "Electrical",
-  "Body Parts",
   "Accessories",
 ];
 
@@ -52,7 +51,8 @@ export default function Navigation() {
             ))}
           </div>
 
-          <div className="flex items-center gap-2 flex-1 lg:flex-initial lg:w-96 ml-auto">
+          {/* Search bar hidden as per user request */}
+          <div className="hidden items-center gap-2 flex-1 lg:flex-initial lg:w-96 ml-auto">
             <div className="relative flex-1">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
               <Input

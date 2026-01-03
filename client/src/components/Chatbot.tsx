@@ -125,13 +125,22 @@ export default function Chatbot() {
   return (
     <>
       <style>{`
-        @keyframes pulseGlow {
-            0% { box-shadow: 0 10px 25px rgba(160, 24, 34, 0.5); transform: scale(1); }
-            50% { box-shadow: 0 15px 40px rgba(160, 24, 34, 0.95); transform: scale(1.08); }
-            100% { box-shadow: 0 10px 25px rgba(160, 24, 34, 0.5); transform: scale(1); }
+        @keyframes pulse {
+          0% {
+            transform: scale(0.95);
+            box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+          }
+          70% {
+            transform: scale(1);
+            box-shadow: 0 0 0 15px rgba(220, 38, 38, 0);
+          }
+          100% {
+            transform: scale(0.95);
+            box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
+          }
         }
         .chat-btn-pulse {
-            animation: pulseGlow 1.5s ease-in-out infinite;
+            animation: pulse 2s infinite;
         }
         .chat-btn-pulse:hover {
             animation: none;
