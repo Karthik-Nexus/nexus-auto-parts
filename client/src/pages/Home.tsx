@@ -5,6 +5,7 @@ import Brands from "@/components/Brands";
 
 import PartsCategories from "@/components/PartsCategories";
 import QualityStandards from "@/components/QualityStandards";
+import HowItWorks from "@/components/HowItWorks";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
         <FeaturedParts />
         <PartsCategories />
         <Brands />
+        <HowItWorks />
         <QualityStandards />
       </main>
       <Footer />

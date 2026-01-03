@@ -139,8 +139,17 @@ export default function Chatbot() {
             box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
           }
         }
+        @keyframes rotateShake {
+          0% { transform: rotate(0deg) scale(0.95); }
+          3% { transform: rotate(15deg) scale(1); }
+          6% { transform: rotate(-15deg) scale(1); }
+          9% { transform: rotate(15deg) scale(1); }
+          12% { transform: rotate(-15deg) scale(1); }
+          15% { transform: rotate(0deg) scale(0.95); }
+          100% { transform: rotate(0deg) scale(0.95); }
+        }
         .chat-btn-pulse {
-            animation: pulse 2s infinite;
+            animation: pulse 2s infinite, rotateShake 3s ease-in-out infinite;
         }
         .chat-btn-pulse:hover {
             animation: none;

@@ -31,7 +31,7 @@ export default function Navigation() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-24 gap-4">
           <Link href="/" data-testid="link-home" className="flex items-center gap-2">
-            <img src="/logo.png" alt="Nexus Auto Parts" className="h-[101px] w-auto object-contain" />
+            <img src="/logo.png" alt="Nexus Auto Parts" className="h-[126px] w-auto object-contain" />
           </Link>
 
           <div className="hidden lg:flex items-center gap-1">
