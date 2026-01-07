@@ -1,23 +1,7 @@
-import { useState, useEffect, useRef } from "react";
-import { MessageCircle, X, Phone, MessageSquare, ChevronRight, Send } from "lucide-react";
+import { useState, useEffect, useRef, useMemo } from "react";
+import { MessageCircle, X, Phone, MessageSquare, ChevronRight } from "lucide-react";
 import { useChatbot } from "@/context/ChatbotContext";
-
-// Mock Data from Reference
-const mockData = {
-  years: ['2024', '2023', '2022', '2021', '2020', '2019', '2018', '2017', '2016', '2015'],
-  makes: {
-    '2024': ['Ford', 'Chevrolet', 'Toyota', 'Honda', 'Nissan', 'BMW', 'Tesla', 'RAM'],
-    '2023': ['Ford', 'Chevrolet', 'Toyota', 'Honda', 'Nissan', 'BMW'],
-    '2022': ['Ford', 'Chevrolet', 'Toyota', 'Honda', 'Nissan']
-  } as Record<string, string[]>,
-  models: {
-    Ford: ['F-150', 'Mustang', 'Explorer', 'Ranger', 'Edge'],
-    Chevrolet: ['Silverado', 'Corvette', 'Equinox', 'Colorado', 'Blazer'],
-    Toyota: ['Camry', 'Corolla', 'Highlander', 'Tacoma', 'Tundra'],
-    Honda: ['Accord', 'Civic', 'CR-V', 'Pilot', 'Ridgeline']
-  } as Record<string, string[]>,
-  parts: ['Engine', 'Transmission', 'Steering Column', 'Instrument Cluster', 'ABS Module', 'Transfer Case', 'Turbo Charger', 'Airbag', 'Differential', 'Axle Shaft']
-};
+import { getMakes, getModels, getYears, getParts } from "@/data/vehicleData";
 
 type Step = 'year' | 'make' | 'model' | 'part' | 'summary';
 
@@ -29,12 +13,18 @@ interface Message {
 }
 
 export default function Chatbot() {
-  const { isOpen, openChatbot, closeChatbot, toggleChatbot } = useChatbot();
+  const { isOpen, closeChatbot, toggleChatbot } = useChatbot();
   const [currentStep, setCurrentStep] = useState<Step>('year');
   const [messages, setMessages] = useState<Message[]>([]);
   const [selections, setSelections] = useState({ year: '', make: '', model: '', part: '' });
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  // Vehicle data
+  const years = useMemo(() => getYears(), []);
+  const makes = useMemo(() => getMakes(), []);
+  const models = useMemo(() => selections.make ? getModels(selections.make) : [], [selections.make]);
+  const parts = useMemo(() => getParts(), []);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -64,13 +54,13 @@ export default function Chatbot() {
   const getOptions = (): string[] => {
     switch (currentStep) {
       case 'year':
-        return mockData.years;
+        return years.slice(0, 20); // Show recent 20 years for better UX
       case 'make':
-        return mockData.makes[selections.year] || mockData.makes['2024'];
+        return makes;
       case 'model':
-        return mockData.models[selections.make] || [];
+        return models;
       case 'part':
-        return mockData.parts;
+        return parts;
       default:
         return [];
     }
@@ -88,26 +78,31 @@ export default function Chatbot() {
 
     let botResponse = '';
     let nextStep: Step = currentStep;
+    let newSelections = { ...selections };
 
     switch (currentStep) {
       case 'year':
-        setSelections({ ...selections, year: value });
+        newSelections.year = value;
+        setSelections(newSelections);
         botResponse = `Great! What is the make of your ${value} vehicle?`;
         nextStep = 'make';
         break;
       case 'make':
-        setSelections({ ...selections, make: value });
+        newSelections.make = value;
+        setSelections(newSelections);
         botResponse = `Perfect! What model is your ${value}?`;
         nextStep = 'model';
         break;
       case 'model':
-        setSelections({ ...selections, model: value });
+        newSelections.model = value;
+        setSelections(newSelections);
         botResponse = 'What part are you looking for?';
         nextStep = 'part';
         break;
       case 'part':
-        setSelections({ ...selections, part: value });
-        botResponse = `Thank you! Here's a summary of your request:\n\n🚗 Vehicle: ${selections.year} ${selections.make} ${selections.model}\n🔧 Part: ${value}\n\nOur team will contact you shortly with a quote. You can also call us at 1-234-567-8900!`;
+        newSelections.part = value;
+        setSelections(newSelections);
+        botResponse = `Thank you! Here's a summary of your request:\n\n🚗 Vehicle: ${selections.year} ${selections.make} ${value}\n🔧 Part: ${value}\n\nOur team will contact you shortly with a quote. You can also call us at (866) 212-2276!`;
         nextStep = 'summary';
         break;
     }
@@ -123,6 +118,13 @@ export default function Chatbot() {
     }, 400);
 
     setMessages(updatedMessages);
+  };
+
+  const resetChat = () => {
+    setCurrentStep('year');
+    setSelections({ year: '', make: '', model: '', part: '' });
+    setMessages([]);
+    initChat();
   };
 
   return (
@@ -199,8 +201,8 @@ export default function Chatbot() {
               >
                 <div
                   className={`max-w-[80%] rounded-2xl px-4 py-2 text-sm shadow ${msg.type === 'user'
-                      ? 'bg-[#c21e23] text-white rounded-br-none'
-                      : 'bg-slate-800/70 text-slate-100 rounded-bl-none border border-slate-700/50'
+                    ? 'bg-[#c21e23] text-white rounded-br-none'
+                    : 'bg-slate-800/70 text-slate-100 rounded-bl-none border border-slate-700/50'
                     }`}
                 >
                   <p className="whitespace-pre-line">
@@ -230,17 +232,29 @@ export default function Chatbot() {
             </div>
           )}
 
+          {/* Summary Actions */}
+          {currentStep === 'summary' && (
+            <div className="p-4 border-t border-slate-700/40 bg-black/20">
+              <button
+                onClick={resetChat}
+                className="w-full py-2 rounded-lg bg-slate-700/50 hover:bg-slate-600/50 text-slate-200 text-sm font-medium transition"
+              >
+                Start New Search
+              </button>
+            </div>
+          )}
+
           {/* Contact Bar */}
           <div className="px-4 py-3 border-t border-slate-700/40 bg-black/30 flex items-center gap-3">
             <a
-              href="tel:12345678900"
+              href="tel:8662122276"
               className="flex-1 flex items-center justify-center gap-2 py-2 rounded-lg bg-[#c21e23] hover:bg-[#a01822] text-white text-sm font-medium transition"
             >
               <Phone className="w-4 h-4" />
               Call Us
             </a>
             <a
-              href="sms:12345678900"
+              href="sms:8662122276"
               className="flex-1 flex items-center justify-center gap-2 py-2 rounded-lg bg-slate-700/50 hover:bg-slate-600/50 text-slate-200 text-sm font-medium transition"
             >
               <MessageSquare className="w-4 h-4" />
