@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Check, Truck, Shield, Award, Phone, Search } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import HeroSearchTool from "@/components/HeroSearchTool";
 
 export default function AxleShaft() {
     return (
@@ -48,34 +49,7 @@ export default function AxleShaft() {
                     {/* Sidebar - Shows first on mobile */}
                     <div className="lg:col-span-1 lg:order-2">
                         <div className="lg:sticky lg:top-28 space-y-4 lg:space-y-6">
-                            <Card className="border-none shadow-2xl bg-slate-900 text-white overflow-hidden">
-                                <CardHeader className="p-4 lg:p-6">
-                                    <CardTitle className="text-xl lg:text-2xl">Get an Instant Quote</CardTitle>
-                                    <CardDescription className="text-slate-300 text-sm lg:text-base">
-                                        Speak with a Parts Specialist now.
-                                    </CardDescription>
-                                </CardHeader>
-                                <CardContent className="p-4 lg:p-6 pt-0 space-y-3 lg:space-y-4">
-                                    <div className="space-y-1 lg:space-y-2">
-                                        <label className="text-xs lg:text-sm font-medium text-slate-300">Vehicle Year</label>
-                                        <Input placeholder="e.g., 2018" className="bg-white/10 border-white/20 text-white placeholder:text-slate-400 h-9 lg:h-10 text-sm" />
-                                    </div>
-                                    <div className="space-y-1 lg:space-y-2">
-                                        <label className="text-xs lg:text-sm font-medium text-slate-300">Make & Model</label>
-                                        <Input placeholder="e.g., Ford F-150" className="bg-white/10 border-white/20 text-white placeholder:text-slate-400 h-9 lg:h-10 text-sm" />
-                                    </div>
-                                    <div className="space-y-1 lg:space-y-2">
-                                        <label className="text-xs lg:text-sm font-medium text-slate-300">Your Phone</label>
-                                        <Input placeholder="(555) 123-4567" className="bg-white/10 border-white/20 text-white placeholder:text-slate-400 h-9 lg:h-10 text-sm" />
-                                    </div>
-                                    <Button className="w-full bg-primary hover:bg-primary/90 text-sm lg:text-base py-2.5 lg:py-3 font-bold shadow-lg rounded-lg">
-                                        Check Price & Availability
-                                    </Button>
-                                    <p className="text-[10px] lg:text-xs text-center text-slate-400">
-                                        By submitting, you agree to receive calls/texts.
-                                    </p>
-                                </CardContent>
-                            </Card>
+                            <HeroSearchTool defaultPart="Axle Shaft" />
 
                             <div className="bg-white p-4 lg:p-6 rounded-xl shadow-lg border border-slate-100 text-center">
                                 <h4 className="font-bold text-slate-900 mb-1 lg:mb-2 text-sm lg:text-base">Need Help Identifying?</h4>
@@ -189,12 +163,7 @@ export default function AxleShaft() {
                                             <td className="px-3 lg:px-6 py-2 lg:py-4 text-red-500">0%</td>
                                             <td className="px-3 lg:px-6 py-2 lg:py-4 text-amber-500">30–50%</td>
                                         </tr>
-                                        <tr className="bg-white">
-                                            <td className="px-3 lg:px-6 py-2 lg:py-4 font-medium">Installation Support</td>
-                                            <td className="px-3 lg:px-6 py-2 lg:py-4 text-green-600 font-bold">✅ Yes</td>
-                                            <td className="px-3 lg:px-6 py-2 lg:py-4 text-red-500">❌ No</td>
-                                            <td className="px-3 lg:px-6 py-2 lg:py-4 text-red-500">❌ No</td>
-                                        </tr>
+
                                         <tr className="bg-slate-50/50">
                                             <td className="px-3 lg:px-6 py-2 lg:py-4 font-medium">Environmental Impact</td>
                                             <td className="px-3 lg:px-6 py-2 lg:py-4 text-green-600 font-bold">Low</td>

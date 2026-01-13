@@ -9,6 +9,7 @@ import usedTransfer from '@/assets/images/parts/used-transfer-case.webp';
 import usedTurbo from '@/assets/images/parts/used-turbo-charger.webp';
 import usedDiff from '@/assets/images/parts/used-differential.webp';
 import usedAxle from '@/assets/images/parts/used-axel-shaft.webp';
+import usedAlternator from '@/assets/images/parts/used-alternator.webp';
 
 const categories = [
   { name: 'Engine', image: usedEngine, price: 'From $699', href: '/engine', badge: 'Best Seller' },
@@ -20,11 +21,12 @@ const categories = [
   { name: 'Turbo Charger', image: usedTurbo, price: 'From $349', href: '/turbo-charger' },
   { name: 'Differential', image: usedDiff, price: 'From $299', href: '/differential' },
   { name: 'Axle Shaft', image: usedAxle, price: 'From $99', href: '/axle-shaft' },
+  { name: 'Alternator', image: usedAlternator, price: 'From $89', href: '/alternator' },
 ];
 
 export default function PartsCategories() {
   return (
-    <section className="py-8 md:py-12 bg-gradient-to-b from-slate-900 to-slate-800">
+    <section id="parts-categories" className="py-8 md:py-12 bg-gradient-to-b from-slate-900 to-slate-800">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">

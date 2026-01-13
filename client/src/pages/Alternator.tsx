@@ -7,7 +7,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import HeroSearchTool from "@/components/HeroSearchTool";
 
-export default function SteeringColumn() {
+export default function Alternator() {
     return (
         <div className="min-h-screen bg-neutral-50 font-sans text-slate-800 overflow-x-hidden w-full max-w-full">
             <Navigation />
@@ -17,18 +17,18 @@ export default function SteeringColumn() {
                 <div
                     className="absolute inset-0 bg-cover bg-center"
                     style={{
-                        backgroundImage: 'url("https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1920&q=80")',
+                        backgroundImage: 'url("https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1920&q=80")',
                     }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60" />
 
                 <div className="relative w-full px-4 z-10 text-center text-white space-y-4 md:space-y-6">
                     <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight drop-shadow-lg px-2">
-                        Steering Columns<br />
-                        <span className="text-primary-foreground">OEM Fit, No Guesswork</span>
+                        Used Alternators for Sale<br />
+                        <span className="text-primary-foreground">Tested & Verified</span>
                     </h1>
                     <p className="text-sm sm:text-base md:text-xl text-gray-200 max-w-2xl mx-auto font-light leading-relaxed px-4">
-                        Modern steering columns loaded with sensors, wiring, and security components. Tested & Verified.
+                        Reliable Charging Power. OEM quality alternators, fully tested and ready to ship.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3 justify-center pt-4 px-4">
                         <Button className="bg-primary hover:bg-primary/90 text-sm md:text-base px-6 md:px-8 py-2 md:py-3 h-auto rounded-lg shadow-lg w-full sm:w-auto">
@@ -49,11 +49,11 @@ export default function SteeringColumn() {
                     {/* Sidebar - Shows first on mobile */}
                     <div className="lg:col-span-1 lg:order-2">
                         <div className="lg:sticky lg:top-28 space-y-4 lg:space-y-6">
-                            <HeroSearchTool defaultPart="Steering Column" />
+                            <HeroSearchTool defaultPart="Alternator" />
 
                             <div className="bg-white p-4 lg:p-6 rounded-xl shadow-lg border border-slate-100 text-center">
                                 <h4 className="font-bold text-slate-900 mb-1 lg:mb-2 text-sm lg:text-base">Need Help Identifying?</h4>
-                                <p className="text-xs lg:text-sm text-slate-500 mb-2 lg:mb-4">Our ASE Certified pros can help you find the exact steering column match.</p>
+                                <p className="text-xs lg:text-sm text-slate-500 mb-2 lg:mb-4">Our ASE Certified pros can help you find the exact alternator match.</p>
                                 <a href="tel:8662122276" className="text-primary font-bold text-lg lg:text-xl hover:underline">
                                     (866) 212-2276
                                 </a>
@@ -72,19 +72,19 @@ export default function SteeringColumn() {
                                             <Award className="w-6 h-6 lg:w-8 lg:h-8 text-primary" />
                                         </div>
                                         <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900">
-                                            Why Buy Steering Columns from Nexus?
+                                            Why Buy Used Alternators from Nexus?
                                         </h2>
                                     </div>
                                     <p className="text-slate-600 text-sm lg:text-base leading-relaxed">
-                                        Modern steering columns are loaded with sensors, wiring, and security components. We ensure every steering column is tested, intact, and VIN-verified so you don’t end up with warning lights or immobilizer issues.
+                                        At Nexus Auto Parts, our used alternators are sourced from low-mileage, accident-free vehicles and professionally tested before shipment. Every unit undergoes <strong>output testing, voltage regularity checks, and housing inspection</strong> to ensure consistent performance. You get OEM reliability without dealer pricing, backed by real technical support.
                                     </p>
-                                    <h3 className="text-base lg:text-xl font-bold text-slate-800">Why Our Steering Columns</h3>
+                                    <h3 className="text-base lg:text-xl font-bold text-slate-800">Why Our Used Alternators Are Better</h3>
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 lg:gap-3">
                                         {[
-                                            "Tested tilt & lock mechanisms",
-                                            "Wiring and connectors inspected",
-                                            "VIN-verified for exact match",
-                                            "Airbag clock spring compatibility checked",
+                                            "Load tested for peak output",
+                                            "Voltage regulator verified",
+                                            "Bearings and pulley inspected",
+                                            "Cleaned and terminals checked",
                                             "Warranty available"
                                         ].map((item, i) => (
                                             <div key={i} className="flex items-start gap-2 text-slate-700 text-sm lg:text-base">
@@ -106,7 +106,7 @@ export default function SteeringColumn() {
                                     </div>
                                     <div>
                                         <h3 className="font-bold text-sm lg:text-lg">Free Nationwide Shipping</h3>
-                                        <p className="text-xs lg:text-sm text-slate-500">Securely palletized & insured</p>
+                                        <p className="text-xs lg:text-sm text-slate-500">Securely packaged & insured</p>
                                     </div>
                                 </CardContent>
                             </Card>

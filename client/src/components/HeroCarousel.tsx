@@ -12,13 +12,13 @@ const slides = [
     title: 'Find the Best Auto Parts',
     subtitle: 'Your Source for Multi-Brand OEM Auto Parts and Accessories',
     discount: 'Save up to 70%',
-    cta: 'Call for 10% Off',
+    cta: 'Explore Parts',
   },
   {
     image: heroBanner2,
-    title: 'Summer Sale',
-    subtitle: 'Over 20 Million Auto Parts',
-    discount: 'Up to 70% OFF',
+    title: 'Premium Used Engines',
+    subtitle: 'Low Mileage, Tested, and Warranty-Backed',
+    discount: 'In Stock Now',
     cta: 'Explore Parts',
   },
   {
@@ -26,7 +26,7 @@ const slides = [
     title: 'OEM Quality Parts',
     subtitle: 'Rigorously Tested & Reliable',
     discount: 'Limited Time',
-    cta: 'View Latest',
+    cta: 'Explore Parts',
   },
 ];
 
@@ -45,6 +45,10 @@ export default function HeroCarousel() {
 
   const currentSlideData = slides[currentSlide];
 
+  const scrollToParts = () => {
+    document.getElementById('parts-categories')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="relative w-full min-h-[700px] md:min-h-[500px] lg:min-h-[600px] overflow-hidden bg-card">
       {/* Background Images */}
@@ -62,12 +66,12 @@ export default function HeroCarousel() {
         </div>
       ))}
 
-      {/* Content Layer */}
-      <div className="absolute inset-0 flex items-start md:items-center pt-4 md:pt-0 z-10">
+      {/* Content Layer - pointer-events-none to let clicks pass through to arrows if needed */}
+      <div className="absolute inset-0 flex items-start md:items-center pt-4 md:pt-0 z-10 pointer-events-none">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-12 px-2 md:px-12">
-            {/* Text Content - Hidden on mobile, shown on tablet+ */}
-            <div className="hidden md:block lg:w-1/2 text-left space-y-5">
+            {/* Text Content - pointer-events-auto to re-enable clicks */}
+            <div className="hidden md:block lg:w-1/2 text-left space-y-5 pointer-events-auto">
               <div>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 leading-tight drop-shadow-md">
                   {currentSlideData.title}
@@ -83,7 +87,9 @@ export default function HeroCarousel() {
               </div>
               <div>
                 <Button
-                  className="bg-primary hover:bg-primary/90 text-white border-0 text-base px-6 py-5 rounded-full shadow-lg"
+                  type="button"
+                  onClick={scrollToParts}
+                  className="bg-primary hover:bg-primary/90 text-white border-0 text-base px-6 py-3 rounded-full shadow-lg h-auto"
                   data-testid={`button-cta-${currentSlide}`}
                 >
                   {currentSlideData.cta}
@@ -91,19 +97,19 @@ export default function HeroCarousel() {
               </div>
             </div>
 
-            {/* Search Tool - Full width on mobile */}
-            <div className="w-full md:w-auto lg:w-1/2 flex justify-center lg:justify-end">
+            {/* Search Tool - pointer-events-auto to re-enable clicks */}
+            <div className="w-full md:w-auto lg:w-1/2 flex justify-center lg:justify-end pointer-events-auto">
               <HeroSearchTool />
             </div>
           </div>
         </div>
       </div>
 
-      {/* Navigation Arrows - Hidden on mobile */}
+      {/* Navigation Arrows - High z-index to stay on top */}
       <Button
         variant="ghost"
         size="icon"
-        className="!absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white z-20 hidden md:flex"
+        className="!absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white z-[60] hidden md:flex cursor-pointer"
         onClick={prevSlide}
         data-testid="button-prev-slide"
       >
@@ -112,7 +118,7 @@ export default function HeroCarousel() {
       <Button
         variant="ghost"
         size="icon"
-        className="!absolute right-4 left-auto top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white z-20 hidden md:flex"
+        className="!absolute right-4 left-auto top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white z-[60] hidden md:flex cursor-pointer"
         onClick={nextSlide}
         data-testid="button-next-slide"
       >

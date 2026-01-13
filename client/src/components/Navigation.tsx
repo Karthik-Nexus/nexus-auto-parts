@@ -6,11 +6,16 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Link, useLocation } from "wouter";
 
 const categories = [
-  "Engine Parts",
-  "Brakes",
-  "Suspension",
-  "Electrical",
-  "Accessories",
+  "Engine",
+  "Transmission",
+  "Steering Column",
+  "Instrument Cluster",
+  "ABS Module",
+  "Transfer Case",
+  "Turbo Charger",
+  "Differential",
+  "Axle Shaft",
+  "Alternator",
 ];
 
 export default function Navigation() {
@@ -29,21 +34,21 @@ export default function Navigation() {
         }`}
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-24 gap-4">
+        <div className="flex items-center justify-between h-24 lg:h-auto lg:py-0 gap-4">
           <Link href="/" data-testid="link-home" className="flex items-center gap-2">
-            <img src="/logo.png" alt="Nexus Auto Parts" className="h-[126px] w-auto object-contain" />
+            <img src="/logo.png" alt="Nexus Auto Parts" className="h-[126px] lg:h-[158px] lg:-my-4 w-auto object-contain" />
           </Link>
 
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden lg:grid grid-cols-5 gap-x-2 gap-y-1 items-center">
             {categories.map((category) => (
               <Link
                 key={category}
-                href={`/products?category=${category.toLowerCase()}`}
+                href={`/${category.toLowerCase().replace(/\s+/g, "-")}`}
               >
                 <Button
                   variant="ghost"
-                  className="text-base font-medium"
-                  data-testid={`link-category-${category.toLowerCase().replace(" ", "-")}`}
+                  className="text-xs xl:text-sm font-medium h-8 w-full justify-center px-2"
+                  data-testid={`link-category-${category.toLowerCase().replace(/\s+/g, "-")}`}
                 >
                   {category}
                 </Button>
@@ -64,15 +69,17 @@ export default function Navigation() {
           </div>
 
           <div className="flex items-center gap-2">
-            <Button
-              variant="default"
-              size="sm"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground"
-              data-testid="button-pay-now"
-            >
-              <CreditCard className="w-4 h-4 mr-1.5" />
-              Pay Now
-            </Button>
+            <Link href="/payment">
+              <Button
+                variant="default"
+                size="sm"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                data-testid="button-pay-now"
+              >
+                <CreditCard className="w-4 h-4 mr-1.5" />
+                Pay Now
+              </Button>
+            </Link>
 
             <Sheet>
               <SheetTrigger asChild>
