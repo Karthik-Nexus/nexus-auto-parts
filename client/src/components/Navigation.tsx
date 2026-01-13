@@ -41,9 +41,11 @@ export default function Navigation() {
 
           <div className="hidden lg:grid grid-cols-5 gap-x-2 gap-y-1 items-center">
             {categories.map((category) => (
-              <Link
+              <a
                 key={category}
                 href={`/${category.toLowerCase().replace(/\s+/g, "-")}`}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <Button
                   variant="ghost"
@@ -52,7 +54,7 @@ export default function Navigation() {
                 >
                   {category}
                 </Button>
-              </Link>
+              </a>
             ))}
           </div>
 
@@ -69,17 +71,17 @@ export default function Navigation() {
           </div>
 
           <div className="flex items-center gap-2">
-            <Link href="/payment">
+            <a href="/payment" target="_blank" rel="noopener noreferrer">
               <Button
                 variant="default"
-                size="sm"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                size="default"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground h-10 text-base px-6 font-bold"
                 data-testid="button-pay-now"
               >
-                <CreditCard className="w-4 h-4 mr-1.5" />
+                <CreditCard className="w-4 h-4 mr-2" />
                 Pay Now
               </Button>
-            </Link>
+            </a>
 
             <Sheet>
               <SheetTrigger asChild>
@@ -95,9 +97,11 @@ export default function Navigation() {
               <SheetContent side="right" className="w-[300px] p-6">
                 <div className="flex flex-col gap-4 mt-8">
                   {categories.map((category) => (
-                    <Link
+                    <a
                       key={category}
-                      href={`/products?category=${category.toLowerCase()}`}
+                      href={`/${category.toLowerCase().replace(/\s+/g, "-")}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <Button
                         variant="ghost"
@@ -106,7 +110,7 @@ export default function Navigation() {
                       >
                         {category}
                       </Button>
-                    </Link>
+                    </a>
                   ))}
                 </div>
               </SheetContent>

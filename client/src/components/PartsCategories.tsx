@@ -60,51 +60,55 @@ export default function PartsCategories() {
         {/* Parts Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
           {categories.map((category) => (
-            <Link key={category.name} href={category.href}>
-              <a className="block h-full group">
-                <div
-                  className="relative bg-white rounded-2xl overflow-hidden h-full shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:-translate-y-1"
-                  data-testid={`category-${category.name.toLowerCase().replace(/\s+/g, '-')}`}
-                >
-                  {/* Badge */}
-                  {category.badge && (
-                    <div className="absolute top-3 left-3 z-10">
-                      <span className="bg-primary text-white text-xs font-bold px-2 py-1 rounded-full">
-                        {category.badge}
-                      </span>
-                    </div>
-                  )}
-
-                  {/* Image Container */}
-                  <div className="relative bg-gradient-to-br from-slate-100 to-slate-200 p-4 aspect-square flex items-center justify-center overflow-hidden">
-                    <img
-                      src={category.image}
-                      alt={category.name}
-                      className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
-                    />
-                    {/* Overlay on hover */}
-                    <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300" />
+            <a
+              key={category.name}
+              href={category.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block h-full group"
+            >
+              <div
+                className="relative bg-white rounded-2xl overflow-hidden h-full shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:-translate-y-1"
+                data-testid={`category-${category.name.toLowerCase().replace(/\s+/g, '-')}`}
+              >
+                {/* Badge */}
+                {category.badge && (
+                  <div className="absolute top-3 left-3 z-10">
+                    <span className="bg-primary text-white text-xs font-bold px-2 py-1 rounded-full">
+                      {category.badge}
+                    </span>
                   </div>
+                )}
 
-                  {/* Content */}
-                  <div className="p-4">
-                    <div className="flex items-start justify-between gap-2">
-                      <div>
-                        <h3 className="font-bold text-slate-900 text-base mb-1 group-hover:text-primary transition-colors">
-                          {category.name}
-                        </h3>
-                        <p className="text-primary font-bold text-sm">
-                          {category.price}
-                        </p>
-                      </div>
-                      <div className="bg-slate-100 group-hover:bg-primary rounded-full p-2 transition-colors">
-                        <ArrowRight className="w-4 h-4 text-slate-600 group-hover:text-white transition-colors" />
-                      </div>
+                {/* Image Container */}
+                <div className="relative bg-gradient-to-br from-slate-100 to-slate-200 p-4 aspect-square flex items-center justify-center overflow-hidden">
+                  <img
+                    src={category.image}
+                    alt={category.name}
+                    className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
+                  />
+                  {/* Overlay on hover */}
+                  <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300" />
+                </div>
+
+                {/* Content */}
+                <div className="p-4">
+                  <div className="flex items-start justify-between gap-2">
+                    <div>
+                      <h3 className="font-bold text-slate-900 text-base mb-1 group-hover:text-primary transition-colors">
+                        {category.name}
+                      </h3>
+                      <p className="text-primary font-bold text-sm">
+                        {category.price}
+                      </p>
+                    </div>
+                    <div className="bg-slate-100 group-hover:bg-primary rounded-full p-2 transition-colors">
+                      <ArrowRight className="w-4 h-4 text-slate-600 group-hover:text-white transition-colors" />
                     </div>
                   </div>
                 </div>
-              </a>
-            </Link>
+              </div>
+            </a>
           ))}
         </div>
 
