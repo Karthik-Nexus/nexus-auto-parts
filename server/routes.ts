@@ -5,6 +5,28 @@ import { addLeadToExcel } from "./services/graphService.js";
 
 export async function registerRoutes(app: Express): Promise<void> {
 
+  app.get("/api/config-check", (req, res) => {
+    const requiredVars = [
+      "AZURE_CLIENT_ID",
+      "AZURE_CLIENT_SECRET",
+      "AZURE_TENANT_ID",
+      "AZURE_REFRESH_TOKEN",
+      "TARGET_USER_EMAIL",
+      "EXCEL_FILE_NAME",
+      "EXCEL_TABLE_NAME"
+    ];
+
+    const status = requiredVars.reduce((acc, varName) => {
+      acc[varName] = process.env[varName] ? "Present" : "MISSING";
+      return acc;
+    }, {} as Record<string, string>);
+
+    res.json({
+      status: Object.values(status).includes("MISSING") ? "ERROR" : "OK",
+      env: status
+    });
+  });
+
   app.post("/api/leads", async (req, res) => {
     try {
       const { name, email, phone, year, make, model, vin, part, message } = req.body;
