@@ -1,16 +1,31 @@
 import { ConfidentialClientApplication } from "@azure/msal-node";
 import { Client } from "@microsoft/microsoft-graph-client";
 
-// Configuration
-const msalConfig = {
-    auth: {
-        clientId: process.env.AZURE_CLIENT_ID || "",
-        clientSecret: process.env.AZURE_CLIENT_SECRET || "",
-        authority: `https://login.microsoftonline.com/${process.env.AZURE_TENANT_ID}`,
-    },
-};
+// Lazy initialization of MSAL to prevent boot crashes if env vars are missing
+let cca: ConfidentialClientApplication | null = null;
 
-const cca = new ConfidentialClientApplication(msalConfig);
+function getMSALClient() {
+    if (cca) return cca;
+
+    const clientId = process.env.AZURE_CLIENT_ID || "";
+    const clientSecret = process.env.AZURE_CLIENT_SECRET || "";
+    const tenantId = process.env.AZURE_TENANT_ID || "common";
+
+    if (!clientId) {
+        throw new Error("Missing AZURE_CLIENT_ID environment variable.");
+    }
+
+    const msalConfig = {
+        auth: {
+            clientId,
+            clientSecret,
+            authority: `https://login.microsoftonline.com/${tenantId}`,
+        },
+    };
+
+    cca = new ConfidentialClientApplication(msalConfig);
+    return cca;
+}
 
 async function getAccessToken() {
     // Debug Credentials
@@ -45,7 +60,8 @@ async function getAccessToken() {
     const request = {
         scopes: ["https://graph.microsoft.com/.default"],
     };
-    const response = await cca.acquireTokenByClientCredential(request);
+    const client = getMSALClient();
+    const response = await client.acquireTokenByClientCredential(request);
     return response?.accessToken;
 }
 
