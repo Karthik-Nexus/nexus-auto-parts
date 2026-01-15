@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
-import { storage } from "./storage";
-import { addLeadToExcel } from "./services/graphService";
+import { storage } from "./storage.js";
+import { addLeadToExcel } from "./services/graphService.js";
 
 export async function registerRoutes(app: Express): Promise<void> {
 
