@@ -211,8 +211,8 @@ export default function About() {
                             <p className="text-lg lg:text-xl leading-relaxed mb-4">
                                 When you buy from Nexus Auto Parts, you're not just getting a part—you're getting <strong>experience</strong>, <strong>transparency</strong>, and <strong>peace of mind</strong>.
                             </p>
-                            <a href="tel:8662122276" className="inline-block mt-4 text-2xl font-bold text-primary hover:underline">
-                                (866) 212-2276
+                            <a href="tel:8663171665" className="inline-block mt-4 text-2xl font-bold text-primary hover:underline">
+                                866-317-1665
                             </a>
                         </CardContent>
                     </Card>

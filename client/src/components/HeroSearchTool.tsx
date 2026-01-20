@@ -72,9 +72,9 @@ export default function HeroSearchTool({ defaultPart = '' }: HeroSearchToolProps
                 </div>
 
                 <div className="w-full space-y-3">
-                    <p className="font-bold text-lg">(866) 212-2276</p>
+                    <p className="font-bold text-lg">866-317-1665</p>
 
-                    <a href="tel:8662122276">
+                    <a href="tel:8663171665">
                         <Button className="w-full bg-white text-black hover:bg-white/90 font-bold h-12 text-base mb-3 rounded-full">
                             Call Us Now
                         </Button>

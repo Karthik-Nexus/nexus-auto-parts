@@ -31,16 +31,16 @@ export default function CallWidget() {
           <p className="text-gray-600 text-sm mb-4">Get Free Shipping</p>
 
           <a
-            href="tel:8662122276"
+            href="tel:8663171665"
             className="flex items-center gap-2 text-red-600 font-semibold text-lg mb-5 hover:text-red-500 transition-colors"
           >
             <Phone className="w-5 h-5" />
-            (866) 212-2276
+            866-317-1665
           </a>
 
           <div className="flex gap-3">
             <a
-              href="tel:8662122276"
+              href="tel:8663171665"
               className="flex-1 flex items-center justify-center gap-2 py-2 rounded-md border border-red-600 text-red-600 font-medium hover:bg-red-600 hover:text-white transition-all"
             >
               <Phone className="w-4 h-4" />
@@ -61,7 +61,7 @@ export default function CallWidget() {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={`fixed bottom-[34px] left-[29px] w-16 h-16 rounded-full bg-red-600 text-white flex items-center justify-center shadow-lg z-40 transition-all duration-300 hover:scale-110 hover:bg-red-700 border-4 border-white/20 ${!isOpen ? 'shake-animation' : ''}`}
-        title="Call us: (866) 212-2276"
+        title="Call us: 866-317-1665"
       >
         {isOpen ? <X className="w-7 h-7" /> : <Phone className="w-7 h-7" />}
       </button>

@@ -33,7 +33,7 @@ export default function TurboCharger() {
                     <div className="flex flex-col sm:flex-row gap-3 justify-center pt-4 px-4">
                         <Button className="bg-primary hover:bg-primary/90 text-sm md:text-base px-6 md:px-8 py-2 md:py-3 h-auto rounded-lg shadow-lg w-full sm:w-auto">
                             <Phone className="mr-2 h-4 w-4 md:h-5 md:w-5" />
-                            (866) 212-2276
+                            866-317-1665
                         </Button>
                         <Button variant="outline" className="bg-white/10 border-white/30 text-white hover:bg-white/20 text-sm md:text-base px-6 md:px-8 py-2 md:py-3 h-auto rounded-lg backdrop-blur-sm w-full sm:w-auto">
                             <Search className="mr-2 h-4 w-4 md:h-5 md:w-5" />
@@ -54,8 +54,8 @@ export default function TurboCharger() {
                             <div className="bg-white p-4 lg:p-6 rounded-xl shadow-lg border border-slate-100 text-center">
                                 <h4 className="font-bold text-slate-900 mb-1 lg:mb-2 text-sm lg:text-base">Need Help Identifying?</h4>
                                 <p className="text-xs lg:text-sm text-slate-500 mb-2 lg:mb-4">Our ASE Certified pros can help you find the exact turbocharger match.</p>
-                                <a href="tel:8662122276" className="text-primary font-bold text-lg lg:text-xl hover:underline">
-                                    (866) 212-2276
+                                <a href="tel:8663171665" className="text-primary font-bold text-lg lg:text-xl hover:underline">
+                                    866-317-1665
                                 </a>
                             </div>
                         </div>

@@ -33,7 +33,7 @@ const faqs = [
     },
     {
         question: "How do I request a part quote?",
-        answer: "You can request a quote by calling us at (866) 212-2276, using the quote form on any product page, or using our live chat. Have your vehicle information ready for faster service."
+        answer: "You can request a quote by calling us at 866-317-1665, using the quote form on any product page, or using our live chat. Have your vehicle information ready for faster service."
     },
     {
         question: "Do you sell new parts?",
@@ -114,10 +114,10 @@ export default function FAQ() {
                                 Our team is ready to help. Contact us for personalized assistance with your parts needs.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                <a href="tel:8662122276">
+                                <a href="tel:8663171665">
                                     <Button size="lg" className="bg-primary hover:bg-primary/90">
                                         <Phone className="mr-2 h-5 w-5" />
-                                        Call (866) 212-2276
+                                        Call 866-317-1665
                                     </Button>
                                 </a>
                                 <a href="/contact">

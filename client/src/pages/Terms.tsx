@@ -82,7 +82,7 @@ export default function Terms() {
                         </ul>
                         <div className="bg-slate-50 p-4 rounded-lg border-l-4 border-slate-300">
                             <p className="text-slate-600 text-sm italic">
-                                <strong>Example:</strong> "Hello, this is a friendly reminder regarding the Part you requested [Year: XYZ Make: XYZ Model: XYZ] with Nexus Auto Parts. Please call (866) 212-2276 for further help. Reply STOP to opt out of SMS messaging at any time."
+                                <strong>Example:</strong> "Hello, this is a friendly reminder regarding the Part you requested [Year: XYZ Make: XYZ Model: XYZ] with Nexus Auto Parts. Please call 866-317-1665 for further help. Reply STOP to opt out of SMS messaging at any time."
                             </p>
                         </div>
                     </CardContent>

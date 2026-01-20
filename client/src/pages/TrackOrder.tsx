@@ -130,10 +130,10 @@ export default function TrackOrder() {
                         <p className="text-slate-300 mb-6 max-w-xl mx-auto">
                             If you have questions about your order status or need assistance, our team is ready to help.
                         </p>
-                        <a href="tel:8662122276">
+                        <a href="tel:8663171665">
                             <Button size="lg" className="bg-primary hover:bg-primary/90">
                                 <Phone className="mr-2 h-5 w-5" />
-                                Call (866) 212-2276
+                                Call 866-317-1665
                             </Button>
                         </a>
                     </CardContent>

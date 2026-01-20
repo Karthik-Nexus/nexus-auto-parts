@@ -44,8 +44,8 @@ export default function Contact() {
                                         <Phone className="w-6 h-6 text-primary" />
                                     </div>
                                     <h3 className="font-bold text-slate-900 mb-2">Call Us</h3>
-                                    <a href="tel:8662122276" className="text-primary font-bold text-lg hover:underline">
-                                        (866) 212-2276
+                                    <a href="tel:8663171665" className="text-primary font-bold text-lg hover:underline">
+                                        866-317-1665
                                     </a>
                                     <p className="text-slate-500 text-sm mt-2">Mon-Fri: 8AM - 6PM EST</p>
                                 </CardContent>
@@ -148,10 +148,10 @@ export default function Contact() {
                             <p className="text-slate-300 mb-6 max-w-2xl mx-auto">
                                 Our parts specialists are standing by to help you find the exact part you need. Call now for real-time inventory checks and expert guidance.
                             </p>
-                            <a href="tel:8662122276">
+                            <a href="tel:8663171665">
                                 <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg px-8 py-6 h-auto">
                                     <Phone className="mr-2 h-5 w-5" />
-                                    Call (866) 212-2276
+                                    Call 866-317-1665
                                 </Button>
                             </a>
                         </CardContent>

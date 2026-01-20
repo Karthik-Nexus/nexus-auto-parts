@@ -293,8 +293,8 @@ export default function PrivacyPolicy() {
                         <p className="mb-2">
                             If you have questions or concerns regarding this Privacy Policy or your personal information, please contact Nexus Auto Parts through our official communication channels.
                         </p>
-                        <a href="tel:8662122276" className="text-xl font-bold text-primary hover:underline">
-                            (866) 212-2276
+                        <a href="tel:8663171665" className="text-xl font-bold text-primary hover:underline">
+                            866-317-1665
                         </a>
                     </CardContent>
                 </Card>

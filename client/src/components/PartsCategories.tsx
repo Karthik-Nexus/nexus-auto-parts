@@ -114,10 +114,10 @@ export default function PartsCategories() {
         <div className="text-center mt-12">
           <p className="text-slate-400 mb-4">Can't find what you're looking for?</p>
           <a
-            href="tel:8662122276"
+            href="tel:8663171665"
             className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-xl font-bold text-lg transition-colors"
           >
-            Call (866) 212-2276
+            Call 866-317-1665
             <ArrowRight className="w-5 h-5" />
           </a>
         </div>

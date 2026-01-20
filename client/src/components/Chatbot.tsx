@@ -147,7 +147,7 @@ export default function Chatbot() {
       console.error("Failed to submit lead", error);
     }
 
-    const summaryMsg = `Thank you! Here's a summary of your request:\n\n🚗 Vehicle: ${selections.year} ${selections.make} ${selections.model}\n🔧 Part: ${selections.part}\n\nOur team will contact you shortly with a quote. You can also call us at (866) 212-2276!`;
+    const summaryMsg = `Thank you! Here's a summary of your request:\n\n🚗 Vehicle: ${selections.year} ${selections.make} ${selections.model}\n🔧 Part: ${selections.part}\n\nOur team will contact you shortly with a quote. You can also call us at 866-317-1665!`;
 
     setMessages([...messages, {
       id: Date.now().toString(),
@@ -285,7 +285,7 @@ export default function Chatbot() {
           {/* Contact Bar */}
           <div className="px-4 py-3 border-t border-slate-700/40 bg-black/30 flex items-center gap-3">
             <a
-              href="tel:8662122276"
+              href="tel:8663171665"
               className="flex-1 flex items-center justify-center gap-2 py-2 rounded-lg bg-[#c21e23] hover:bg-[#a01822] text-white text-sm font-medium transition"
             >
               <Phone className="w-4 h-4" />

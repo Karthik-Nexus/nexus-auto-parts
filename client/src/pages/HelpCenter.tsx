@@ -90,14 +90,14 @@ export default function HelpCenter() {
 
                 {/* Quick Contact */}
                 <div className="grid sm:grid-cols-3 gap-4 mb-12">
-                    <a href="tel:8662122276" className="block">
+                    <a href="tel:8663171665" className="block">
                         <Card className="border-none shadow-lg hover:shadow-xl transition-shadow h-full">
                             <CardContent className="p-6 text-center">
                                 <div className="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
                                     <Phone className="w-7 h-7 text-primary" />
                                 </div>
                                 <h3 className="font-bold text-slate-900 mb-1">Call Us</h3>
-                                <p className="text-primary font-bold">(866) 212-2276</p>
+                                <p className="text-primary font-bold">866-317-1665</p>
                                 <p className="text-slate-500 text-sm mt-1">Mon-Fri 8AM-6PM EST</p>
                             </CardContent>
                         </Card>
@@ -181,10 +181,10 @@ export default function HelpCenter() {
                             Our experienced parts specialists are ready to assist you with any questions or concerns.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a href="tel:8662122276">
+                            <a href="tel:8663171665">
                                 <Button size="lg" className="bg-primary hover:bg-primary/90">
                                     <Phone className="mr-2 h-5 w-5" />
-                                    Call (866) 212-2276
+                                    Call 866-317-1665
                                 </Button>
                             </a>
                             <a href="/contact">
