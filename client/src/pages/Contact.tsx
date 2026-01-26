@@ -167,6 +167,7 @@ export default function Contact() {
                                         type="tel"
                                         placeholder="(555) 123-4567"
                                         value={formData.phone}
+                                        maxLength={14}
                                         onChange={(e) => {
                                             const input = e.target.value.replace(/\D/g, '').slice(0, 10);
                                             const formatted = input.length === 0 ? '' :

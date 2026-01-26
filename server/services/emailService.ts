@@ -1,15 +1,14 @@
 import nodemailer from 'nodemailer';
 
-// Configure transporter
-const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST || 'smtp.gmail.com',
-    port: parseInt(process.env.SMTP_PORT || '587'),
-    secure: false, // true for 465, false for other ports
-    auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-    },
-});
+// Helper to create transporter
+const createTransporter = (user: string, pass: string) => {
+    return nodemailer.createTransport({
+        host: 'smtp.gmail.com',
+        port: 465, // Use 465 for SSL/TLS, or 587 for STARTTLS
+        secure: true, // true for 465
+        auth: { user, pass },
+    });
+};
 
 interface LeadData {
     name: string;
@@ -24,16 +23,24 @@ interface LeadData {
 }
 
 export async function sendLeadEmails(lead: LeadData) {
-    if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
-        console.warn("SMTP credentials missing. Skipping email sending.");
+    const adminUser = process.env.ADMIN_EMAIL_USER;
+    const adminPass = process.env.ADMIN_EMAIL_PASS;
+    const salesUser = process.env.SALES_EMAIL_USER;
+    const salesPass = process.env.SALES_EMAIL_PASS;
+
+    if (!adminUser || !adminPass || !salesUser || !salesPass) {
+        console.warn("Missing Email Credentials in .env. Skipping emails.");
         return;
     }
 
-    // 1. Send Notification to Sales
-    const salesMailOptions = {
-        from: `"Nexus System" <${process.env.SMTP_USER}>`,
-        to: 'sales@nexusautopartsus.com',
-        subject: `New Lead: ${lead.year} ${lead.make} ${lead.model} - ${lead.part}`,
+    const adminTransporter = createTransporter(adminUser, adminPass);
+    const salesTransporter = createTransporter(salesUser, salesPass);
+
+    // 1. Internal Notification (From Admin -> To Sales)
+    const internalMailOptions = {
+        from: `"System Admin" <${adminUser}>`,
+        to: salesUser, // Send to Sales Team
+        subject: `New Lead: ${lead.year || 'Unknown'} ${lead.make || 'Vehicle'} - ${lead.part || 'Part'}`,
         html: `
             <h2>New Lead Received</h2>
             <p><strong>Customer:</strong> ${lead.name}</p>
@@ -50,9 +57,9 @@ export async function sendLeadEmails(lead: LeadData) {
         `
     };
 
-    // 2. Send Confirmation to Customer
+    // 2. Customer Confirmation (From Sales -> To Customer)
     const customerMailOptions = {
-        from: `"Nexus Auto Parts" <admin@nexusautopartsus.com>`, // As requested: admin@nexusemail (using domain for consistency)
+        from: `"Nexus Auto Parts" <${salesUser}>`,
         to: lead.email,
         subject: 'We Received Your Parts Request!',
         html: `
@@ -71,10 +78,11 @@ export async function sendLeadEmails(lead: LeadData) {
     };
 
     try {
-        await transporter.sendMail(salesMailOptions);
-        console.log('Sales notification sent');
-        await transporter.sendMail(customerMailOptions);
-        console.log('Customer confirmation sent');
+        await adminTransporter.sendMail(internalMailOptions);
+        console.log('Internal notification sent to Sales');
+
+        await salesTransporter.sendMail(customerMailOptions);
+        console.log('Confirmation email sent to Customer');
     } catch (error) {
         console.error('Error sending emails:', error);
     }

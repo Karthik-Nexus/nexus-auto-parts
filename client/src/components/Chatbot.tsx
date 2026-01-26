@@ -239,6 +239,7 @@ export default function Chatbot() {
                   required
                   className="w-full bg-slate-800/50 border border-slate-600/50 rounded-lg px-3 py-2 text-sm text-white placeholder:text-slate-400 focus:outline-none focus:border-[#c21e23]"
                   value={contactInfo.phone}
+                  maxLength={14}
                   onChange={(e) => {
                     const input = e.target.value.replace(/\D/g, '').slice(0, 10);
                     const formatted = input.length === 0 ? '' :

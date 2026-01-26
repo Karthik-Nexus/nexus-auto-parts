@@ -1,32 +1,10 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage.js";
-import { addLeadToExcel } from "./services/graphService.js";
 import { sendLeadEmails } from "./services/emailService.js";
+import { appendLeadToSheet } from "./services/sheetService.js";
 
 export async function registerRoutes(app: Express): Promise<void> {
-
-  app.get("/api/config-check", (req, res) => {
-    const requiredVars = [
-      "AZURE_CLIENT_ID",
-      "AZURE_CLIENT_SECRET",
-      "AZURE_TENANT_ID",
-      "AZURE_REFRESH_TOKEN",
-      "TARGET_USER_EMAIL",
-      "EXCEL_FILE_NAME",
-      "EXCEL_TABLE_NAME"
-    ];
-
-    const status = requiredVars.reduce((acc, varName) => {
-      acc[varName] = process.env[varName] ? "Present" : "MISSING";
-      return acc;
-    }, {} as Record<string, string>);
-
-    res.json({
-      status: Object.values(status).includes("MISSING") ? "ERROR" : "OK",
-      env: status
-    });
-  });
 
   app.post("/api/leads", async (req, res) => {
     try {
@@ -38,18 +16,17 @@ export async function registerRoutes(app: Express): Promise<void> {
         return;
       }
 
-      await addLeadToExcel({
-        Name: name,
-        Email: email,
-        Phone: phone,
-        Year: year || "N/A",
-        Make: make || "N/A",
-        Model: model || "N/A",
-        Part: part || "N/A",
-        Vin: vin || "N/A",
-        Message: message || "N/A",
-        Date: new Date().toLocaleString()
-      });
+      // Append to Google Sheet
+      try {
+        await appendLeadToSheet({
+          name, email, phone, year: year || '', make: make || '',
+          model: model || '', part: part || '', vin: vin || '',
+          message: message || '', date: new Date().toLocaleString()
+        });
+      } catch (e) {
+        console.error("Failed to append to sheet", e);
+        // Continue to send emails even if sheet fails? Yes.
+      }
 
       // Send Emails
       await sendLeadEmails({
