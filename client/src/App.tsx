@@ -28,6 +28,7 @@ import Contact from "@/pages/Contact";
 import FAQ from "@/pages/FAQ";
 import TrackOrder from "@/pages/TrackOrder";
 import HelpCenter from "@/pages/HelpCenter";
+import SmsTerms from "@/pages/SmsTerms";
 
 function Router() {
   return (
@@ -41,6 +42,7 @@ function Router() {
       <Route path="/faq" component={FAQ} />
       <Route path="/track" component={TrackOrder} />
       <Route path="/help" component={HelpCenter} />
+      <Route path="/sms-terms" component={SmsTerms} />
       <Route path="/engine" component={Engine} />
       <Route path="/transmission" component={Transmission} />
       <Route path="/steering-column" component={SteeringColumn} />

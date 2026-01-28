@@ -42,7 +42,7 @@ export async function sendLeadEmails(lead: LeadData) {
         to: salesUser, // Send to Sales Team
         subject: `Part Request: ${lead.year || 'Unknown'} ${lead.make || 'Vehicle'} - ${lead.part || 'Part'}`,
         html: `
-            <h2>Part Request Received</h2>
+            <h2>New Lead Received</h2>
             <p><strong>Customer:</strong> ${lead.name}</p>
             <p><strong>Email:</strong> ${lead.email}</p>
             <p><strong>Phone:</strong> ${lead.phone}</p>
@@ -67,7 +67,7 @@ export async function sendLeadEmails(lead: LeadData) {
                 <h2>Thank you for your request, ${lead.name.split(' ')[0]}!</h2>
                 <p>We have received your inquiry for a <strong>${lead.year || ''} ${lead.make || ''} ${lead.model || ''} - ${lead.part || 'part'}</strong>.</p>
                 <p>A dedicated parts specialist is reviewing our inventory and will be reaching out to you by phone within the next <strong>5–10 minutes</strong> with a quote.</p>
-                <p>Please make sure you are available to take the call at <strong>866-317-1665</strong>.</p>
+
                 <br />
                 <p>If you need immediate assistance, please call us at:</p>
                 <h3 style="color: #d32f2f;">866-317-1665</h3>

@@ -137,6 +137,9 @@ export default function HeroSearchTool({ defaultPart = '' }: HeroSearchToolProps
                             className="flex h-10 w-full rounded-md border border-input bg-white text-slate-900 px-3 py-2 text-sm"
                             value={contactInfo.phone}
                             maxLength={14}
+                            minLength={14}
+                            pattern="^\(\d{3}\) \d{3}-\d{4}$"
+                            title="Please enter a valid 10-digit phone number"
                             onChange={(e) => {
                                 const input = e.target.value.replace(/\D/g, '').slice(0, 10);
                                 const formatted = input.length === 0 ? '' :

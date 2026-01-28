@@ -9,6 +9,7 @@ const footerLinks = {
     { name: 'Contact Us', href: '/contact' },
     { name: 'Privacy Policy', href: '/privacy-policy' },
     { name: 'Terms & Conditions', href: '/terms' },
+    { name: 'SMS Terms & Conditions', href: '/sms-terms' },
   ],
   support: [
     { name: 'Track Order', href: '/track' },
