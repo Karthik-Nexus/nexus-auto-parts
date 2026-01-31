@@ -60,7 +60,7 @@ export default function CallWidget() {
       {/* Floating Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`fixed bottom-[34px] left-[29px] w-16 h-16 rounded-full bg-red-600 text-white flex items-center justify-center shadow-lg z-40 transition-all duration-300 hover:scale-110 hover:bg-red-700 border-4 border-white/20 ${!isOpen ? 'shake-animation' : ''}`}
+        className={`fixed bottom-[34px] left-[29px] w-16 h-16 rounded-full bg-emerald-600 text-white flex items-center justify-center shadow-lg z-40 transition-all duration-300 hover:scale-110 hover:bg-emerald-700 border-4 border-white/20 ${!isOpen ? 'shake-animation' : ''}`}
         title="Call us: 866-317-1665"
       >
         {isOpen ? <X className="w-7 h-7" /> : <Phone className="w-7 h-7" />}
