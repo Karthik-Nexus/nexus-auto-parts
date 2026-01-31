@@ -24,7 +24,7 @@ export default function ThankYou() {
                         </p>
 
                         <a href="tel:8663171665" className="inline-block">
-                            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white text-xl px-8 py-6 h-auto rounded-full shadow-lg shadow-primary/20 transition-all hover:scale-105">
+                            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white text-xl px-8 py-3 h-auto rounded-full shadow-lg shadow-primary/20 transition-all hover:scale-105">
                                 <Phone className="mr-3 h-6 w-6" />
                                 (866) 317-1665
                             </Button>

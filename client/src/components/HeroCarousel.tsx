@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import HeroSearchTool from './HeroSearchTool';
 import heroBanner1 from '@/assets/generated_images/clean_hero_engine.png';
@@ -50,12 +50,18 @@ export default function HeroCarousel() {
   };
 
   return (
-    <div className="relative w-full min-h-[700px] md:min-h-[500px] lg:min-h-[600px] overflow-hidden bg-card">
-      {/* Background Images */}
+    <div className="relative w-full h-auto min-h-[850px] md:min-h-[500px] lg:min-h-[600px] bg-card overflow-hidden md:overflow-visible">
+
+      {/* Background Images - Absolute Positioned to cover the container */}
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`absolute inset-0 transition-opacity duration-700 ${index === currentSlide ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+          className={`absolute inset-0 transition-opacity duration-700 
+            ${/* Desktop: toggle opacity based on slide. Mobile: Index 0 is always 100%, others hidden */ ''}
+            ${index === currentSlide ? 'opacity-100' : 'md:opacity-0 md:pointer-events-none'}
+            ${/* Mobile: Always show index 0, hide others. Desktop: rotation handles it */ ''}
+            ${index === 0 ? 'opacity-100' : 'hidden md:block'}
+          `}
         >
           <img
             src={slide.image}
@@ -66,11 +72,40 @@ export default function HeroCarousel() {
         </div>
       ))}
 
-      {/* Content Layer - pointer-events-none to let clicks pass through to arrows if needed */}
-      <div className="absolute inset-0 flex items-start md:items-center pt-4 md:pt-0 z-10 pointer-events-none">
-        <div className="container mx-auto px-4">
+      {/* Content Layer */}
+      {/* Mobile: relative (follows flow, expands parent). Desktop: absolute (overlays background) */}
+      <div className="relative md:absolute inset-0 flex items-start md:items-center pt-8 md:pt-0 z-10 pointer-events-none">
+        {/* Added wrapper div for spacing/layout control on mobile */}
+        <div className="container mx-auto px-4 pb-10 md:pb-0">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-12 px-2 md:px-12">
-            {/* Text Content - pointer-events-auto to re-enable clicks */}
+
+            {/* Mobile Specific Text Content */}
+            <div className="block md:hidden col-span-1 text-center space-y-4 pointer-events-auto mb-4">
+              <h2 className="text-2xl font-bold text-white leading-tight drop-shadow-md uppercase">
+                Find the Best Auto Parts <br /> and Accessories Online <br /> for Your Vehicle
+              </h2>
+              <p className="text-base font-semibold text-white/90 drop-shadow-sm">
+                Your Source for Multi-Brand OEM Auto Parts and Accessories
+              </p>
+              <p className="text-sm text-white/80 leading-relaxed px-2">
+                Save up to 70% on over 300 brands and 20 million auto parts at PrimeAutoparts! Don’t miss out – shop now for unbeatable deals on car parts and accessories.
+              </p>
+
+              <div className="flex flex-col items-center gap-3 mt-4">
+                <p className="text-lg font-bold text-white">
+                  Call Us to get 10% off
+                </p>
+                <a
+                  href="tel:8663171665"
+                  className="flex items-center gap-2 bg-[#d71f1f] hover:bg-red-700 text-white px-6 py-3 rounded-full font-bold shadow-lg transition-colors border-2 border-white/20"
+                >
+                  <Phone className="w-5 h-5" />
+                  (866) 317-1665
+                </a>
+              </div>
+            </div>
+
+            {/* Desktop Text Content - pointer-events-auto to re-enable clicks */}
             <div className="hidden md:block lg:w-1/2 text-left space-y-5 pointer-events-auto">
               <div>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 leading-tight drop-shadow-md">
@@ -98,7 +133,7 @@ export default function HeroCarousel() {
             </div>
 
             {/* Search Tool - pointer-events-auto to re-enable clicks */}
-            <div className="w-full md:w-auto lg:w-1/2 flex justify-center lg:justify-end pointer-events-auto">
+            <div className="w-full md:w-auto lg:w-1/2 flex justify-center lg:justify-end pointer-events-auto pb-4 md:pb-0">
               <HeroSearchTool />
             </div>
           </div>
@@ -126,7 +161,7 @@ export default function HeroCarousel() {
       </Button>
 
       {/* Slide Indicators */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 hidden md:flex gap-2 z-20">
         {slides.map((_, index) => (
           <button
             key={index}

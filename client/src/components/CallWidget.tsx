@@ -2,7 +2,14 @@ import { useState, useEffect } from "react";
 import { Phone, MessageSquare, X } from "lucide-react";
 
 export default function CallWidget() {
-  const [isOpen, setIsOpen] = useState(true); // Default open on page load
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    // Open by default only on desktop
+    if (window.innerWidth >= 768) {
+      setIsOpen(true);
+    }
+  }, []);
 
   return (
     <>
@@ -28,7 +35,7 @@ export default function CallWidget() {
       {isOpen && (
         <div className="fixed bottom-28 left-6 bg-white rounded-2xl p-5 shadow-2xl z-50 w-72 border border-red-600 animate-in slide-in-from-bottom-4 fade-in duration-200">
           <h3 className="text-xl font-bold text-red-600 mb-1">Call Us Now!</h3>
-          <p className="text-gray-600 text-sm mb-4">Get Free Shipping</p>
+          <p className="text-gray-600 text-sm mb-4">Talk to an Expert</p>
 
           <a
             href="tel:8663171665"
@@ -41,17 +48,10 @@ export default function CallWidget() {
           <div className="flex gap-3">
             <a
               href="tel:8663171665"
-              className="flex-1 flex items-center justify-center gap-2 py-2 rounded-md border border-red-600 text-red-600 font-medium hover:bg-red-600 hover:text-white transition-all"
+              className="flex-1 flex items-center justify-center gap-2 py-2 rounded-md bg-emerald-600 text-white font-medium hover:bg-emerald-700 transition-all shadow-sm"
             >
               <Phone className="w-4 h-4" />
               Call
-            </a>
-            <a
-              href="mailto:sales@nexusautopartsus.com"
-              className="flex-1 flex items-center justify-center gap-2 py-2 rounded-md bg-red-600 text-white font-medium hover:bg-red-700 transition-all"
-            >
-              <MessageSquare className="w-4 h-4" />
-              Email
             </a>
           </div>
         </div>
