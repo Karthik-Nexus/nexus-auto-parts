@@ -1,9 +1,14 @@
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
 export default function ThankYou() {
+    useEffect(() => {
+        document.title = "Thank You - Nexus Auto Parts";
+    }, []);
+
     return (
         <div className="min-h-screen bg-neutral-50 font-sans text-slate-800 flex flex-col">
             <Navigation />

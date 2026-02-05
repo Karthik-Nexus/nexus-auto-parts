@@ -61,12 +61,15 @@ function Router() {
   );
 }
 
+import GTMTracker from "@/components/GTMTracker";
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <ChatbotProvider>
         <TooltipProvider>
           <Toaster />
+          <GTMTracker /> {/* Tracking component mounted at top level */}
           <Router />
           <Chatbot />
           <CallWidget />
