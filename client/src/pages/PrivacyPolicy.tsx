@@ -17,7 +17,7 @@ export default function PrivacyPolicy() {
                         Privacy Policy
                     </h1>
                     <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto">
-                        Nexus Auto Parts values your privacy and is committed to protecting your personal information
+                        Nexus Auto Parts LLC values your privacy and is committed to protecting your personal information
                     </p>
                 </div>
             </section>
@@ -38,7 +38,7 @@ export default function PrivacyPolicy() {
                     </CardHeader>
                     <CardContent className="p-6 space-y-4">
                         <p className="text-slate-600">
-                            When you request a part, place an order, or communicate with Nexus Auto Parts, we may collect the following information:
+                            When you request a part, place an order, or communicate with Nexus Auto Parts LLC, we may collect the following information:
                         </p>
                         <div className="grid sm:grid-cols-2 gap-3">
                             {[
@@ -117,7 +117,7 @@ export default function PrivacyPolicy() {
                         <ul className="space-y-3 text-slate-600">
                             <li className="flex items-start gap-2">
                                 <span className="text-primary font-bold">•</span>
-                                Nexus Auto Parts owns and controls the information you provide to us
+                                Nexus Auto Parts LLC owns and controls the information you provide to us
                             </li>
                             <li className="flex items-start gap-2">
                                 <span className="text-primary font-bold">•</span>
@@ -152,7 +152,7 @@ export default function PrivacyPolicy() {
                         <ul className="space-y-2 text-slate-600">
                             <li className="flex items-start gap-2">
                                 <span className="text-primary font-bold">•</span>
-                                Only authorized Nexus Auto Parts personnel have access to personal data
+                                Only authorized Nexus Auto Parts LLC personnel have access to personal data
                             </li>
                             <li className="flex items-start gap-2">
                                 <span className="text-primary font-bold">•</span>
@@ -268,7 +268,7 @@ export default function PrivacyPolicy() {
                     </CardHeader>
                     <CardContent className="p-6 space-y-4">
                         <p className="text-slate-600">
-                            Nexus Auto Parts may update this Privacy Policy from time to time to reflect operational, legal, or regulatory changes.
+                            Nexus Auto Parts LLC may update this Privacy Policy from time to time to reflect operational, legal, or regulatory changes.
                         </p>
                         <ul className="space-y-2 text-slate-600">
                             <li className="flex items-start gap-2">
@@ -291,7 +291,7 @@ export default function PrivacyPolicy() {
                     <CardContent className="p-6 text-center">
                         <Mail className="w-8 h-8 mx-auto mb-4 text-primary" />
                         <p className="mb-2">
-                            If you have questions or concerns regarding this Privacy Policy or your personal information, please contact Nexus Auto Parts through our official communication channels.
+                            If you have questions or concerns regarding this Privacy Policy or your personal information, please contact Nexus Auto Parts LLC through our official communication channels.
                         </p>
                         <a href="tel:8663171665" className="text-xl font-bold text-primary hover:underline">
                             866-317-1665

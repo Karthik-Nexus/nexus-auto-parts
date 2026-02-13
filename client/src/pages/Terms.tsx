@@ -27,7 +27,7 @@ export default function Terms() {
                 {/* SMS Section Header */}
                 <div className="text-center">
                     <h2 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-2">SMS Terms & Conditions</h2>
-                    <p className="text-slate-600">Terms governing SMS communications from Nexus Auto Parts</p>
+                    <p className="text-slate-600">Terms governing SMS communications from Nexus Auto Parts LLC</p>
                 </div>
 
                 {/* SMS Consent */}
@@ -60,7 +60,7 @@ export default function Terms() {
                     </CardHeader>
                     <CardContent className="p-6 space-y-4">
                         <p className="text-slate-600">
-                            If you have consented to receive text messages from Nexus Auto parts, you may receive messages related to the following:
+                            If you have consented to receive text messages from Nexus Auto Parts LLC, you may receive messages related to the following:
                         </p>
                         <ul className="space-y-2 text-slate-600">
                             <li className="flex items-start gap-2">
@@ -82,7 +82,7 @@ export default function Terms() {
                         </ul>
                         <div className="bg-slate-50 p-4 rounded-lg border-l-4 border-slate-300">
                             <p className="text-slate-600 text-sm italic">
-                                <strong>Example:</strong> "Hello, this is a friendly reminder regarding the Part you requested [Year: XYZ Make: XYZ Model: XYZ] with Nexus Auto Parts. Please call 866-317-1665 for further help. Reply STOP to opt out of SMS messaging at any time."
+                                <strong>Example:</strong> "Hello, this is a friendly reminder regarding the Part you requested [Year: XYZ Make: XYZ Model: XYZ] with Nexus Auto Parts LLC. Please call 866-317-1665 for further help. Reply STOP to opt out of SMS messaging at any time."
                             </p>
                         </div>
                     </CardContent>
@@ -127,7 +127,7 @@ export default function Terms() {
                         </CardTitle>
                     </CardHeader>
                     <CardContent className="p-6 space-y-4">
-                        <p className="text-slate-600">You may opt-in to receive SMS messages from Nexus Auto Parts in the following ways:</p>
+                        <p className="text-slate-600">You may opt-in to receive SMS messages from Nexus Auto Parts LLC in the following ways:</p>
                         <ul className="space-y-2 text-slate-600">
                             <li className="flex items-start gap-2">
                                 <span className="text-primary font-bold">•</span>

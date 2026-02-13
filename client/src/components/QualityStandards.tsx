@@ -28,7 +28,7 @@ export default function QualityStandards() {
     <section className="py-12 md:py-16 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold mb-2">Why Shop with Nexus Auto Parts?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-2">Why Shop with Nexus Auto Parts LLC?</h2>
           <p className="text-muted-foreground">Commitment to excellence in every part we deliver</p>
         </div>
 

@@ -40,7 +40,7 @@ export default function Warranty() {
                             </li>
                             <li className="flex items-start gap-2">
                                 <span className="text-primary font-bold">•</span>
-                                Incorrect parts sent by Nexus Auto Parts
+                                Incorrect parts sent by Nexus Auto Parts LLC
                             </li>
                             <li className="flex items-start gap-2">
                                 <span className="text-primary font-bold">•</span>
@@ -200,7 +200,7 @@ export default function Warranty() {
                     </CardHeader>
                     <CardContent className="p-6 space-y-4">
                         <p className="text-slate-600">
-                            Nexus Auto Parts is not responsible for shipments marked delivered by the carrier to the address provided but not received by the customer.
+                            Nexus Auto Parts LLC is not responsible for shipments marked delivered by the carrier to the address provided but not received by the customer.
                         </p>
                         <div className="bg-slate-50 p-4 rounded-lg">
                             <p className="font-medium text-slate-700 mb-2">Freight shipments:</p>

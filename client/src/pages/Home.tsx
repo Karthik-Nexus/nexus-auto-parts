@@ -10,7 +10,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   useEffect(() => {
-    document.title = "Nexus Auto Parts - Trusted Auto Parts for Your Vehicle";
+    document.title = "Nexus Auto Parts LLC - Trusted Auto Parts for Your Vehicle";
   }, []);
 
   return (

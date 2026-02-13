@@ -69,7 +69,7 @@ export default function SmsTerms() {
                     </CardHeader>
                     <CardContent className="p-6 space-y-4">
                         <p className="text-slate-600">
-                            If you have consented to receive text messages from Nexus Auto Parts, you may receive messages related to the following:
+                            If you have consented to receive text messages from Nexus Auto Parts LLC, you may receive messages related to the following:
                         </p>
                         <ul className="grid sm:grid-cols-2 gap-3">
                             {[
@@ -96,7 +96,7 @@ export default function SmsTerms() {
                         </CardTitle>
                     </CardHeader>
                     <CardContent className="p-6 space-y-4">
-                        <p className="text-slate-600">You may opt-in to receive SMS messages from Nexus Auto Parts in the following ways:</p>
+                        <p className="text-slate-600">You may opt-in to receive SMS messages from Nexus Auto Parts LLC in the following ways:</p>
                         <ul className="space-y-3">
                             <li className="flex items-center gap-3">
                                 <span className="bg-primary/10 text-primary p-1 rounded">1</span>

@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 
 export default function ThankYou() {
     useEffect(() => {
-        document.title = "Thank You - Nexus Auto Parts";
+        document.title = "Thank You - Nexus Auto Parts LLC";
     }, []);
 
     return (

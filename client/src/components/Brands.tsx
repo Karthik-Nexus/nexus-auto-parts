@@ -32,7 +32,7 @@ export default function Brands() {
                 <div className="text-center mb-10">
                     <h2 className="text-3xl md:text-4xl font-bold mb-3">Brands</h2>
                     <p className="text-muted-foreground max-w-2xl mx-auto">
-                        At Nexus Auto, we offer high quality used parts sourced from some of the most trusted and best-selling automotive brands in the industry.
+                        At Nexus Auto Parts LLC, we offer high quality used parts sourced from some of the most trusted and best-selling automotive brands in the industry.
                     </p>
                 </div>
             </div>

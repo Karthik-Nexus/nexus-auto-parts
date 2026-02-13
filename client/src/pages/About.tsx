@@ -21,7 +21,7 @@ export default function About() {
 
                 <div className="relative w-full px-4 z-10 text-center text-white space-y-4 md:space-y-6">
                     <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight drop-shadow-lg">
-                        About Nexus Auto Parts
+                        About Nexus Auto Parts LLC
                     </h1>
                     <p className="text-base sm:text-lg md:text-xl text-gray-200 max-w-3xl mx-auto font-light leading-relaxed px-4">
                         Simple. Reliable. Stress-Free.
@@ -35,7 +35,7 @@ export default function About() {
                     <Card className="border-none shadow-xl bg-white overflow-hidden">
                         <CardContent className="p-6 sm:p-8 lg:p-12">
                             <p className="text-lg lg:text-xl text-slate-700 leading-relaxed mb-6">
-                                At Nexus Auto Parts, we make buying used auto and truck parts simple, reliable, and stress-free.
+                                At Nexus Auto Parts LLC, we make buying used auto and truck parts simple, reliable, and stress-free.
                             </p>
                             <p className="text-slate-600 leading-relaxed mb-6">
                                 With over <strong className="text-primary">17 years</strong> in the auto parts industry, we've helped thousands of customers find quality-tested OEM parts at prices that make sense. Whether you're replacing an engine, transmission, or a hard-to-find component, our goal is to get you the right part the first time—without the dealership markup.
@@ -183,7 +183,7 @@ export default function About() {
                     <Card className="border-none shadow-lg bg-white">
                         <CardContent className="p-6 sm:p-8">
                             <p className="text-slate-600 leading-relaxed mb-6">
-                                For over 17 years, Nexus Auto Parts has been committed to:
+                                For over 17 years, Nexus Auto Parts LLC has been committed to:
                             </p>
                             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                                 {[
@@ -209,7 +209,7 @@ export default function About() {
                     <Card className="border-none shadow-xl bg-gradient-to-r from-slate-900 to-slate-800 text-white">
                         <CardContent className="p-8 lg:p-12">
                             <p className="text-lg lg:text-xl leading-relaxed mb-4">
-                                When you buy from Nexus Auto Parts, you're not just getting a part—you're getting <strong>experience</strong>, <strong>transparency</strong>, and <strong>peace of mind</strong>.
+                                When you buy from Nexus Auto Parts LLC, you're not just getting a part—you're getting <strong>experience</strong>, <strong>transparency</strong>, and <strong>peace of mind</strong>.
                             </p>
                             <a href="tel:8663171665" className="inline-block mt-4 text-2xl font-bold text-primary hover:underline">
                                 866-317-1665

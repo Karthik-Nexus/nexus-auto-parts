@@ -88,7 +88,7 @@ export default function Footer() {
         <div className="border-t pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-muted-foreground text-center md:text-left">
-              © 2025 NexusAutoParts — All Rights Reserved • Designed for trusted returning users
+              © 2025 Nexus Auto Parts LLC — All Rights Reserved • Designed for trusted returning users
             </p>
             <div className="flex items-center gap-3">
               <SiVisa className="w-10 h-6 text-muted-foreground" />

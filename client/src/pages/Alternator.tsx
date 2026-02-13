@@ -76,7 +76,7 @@ export default function Alternator() {
                                         </h2>
                                     </div>
                                     <p className="text-slate-600 text-sm lg:text-base leading-relaxed">
-                                        At Nexus Auto Parts, our used alternators are sourced from low-mileage, accident-free vehicles and professionally tested before shipment. Every unit undergoes <strong>output testing, voltage regularity checks, and housing inspection</strong> to ensure consistent performance. You get OEM reliability without dealer pricing, backed by real technical support.
+                                        At Nexus Auto Parts LLC, our used alternators are sourced from low-mileage, accident-free vehicles and professionally tested before shipment. Every unit undergoes <strong>output testing, voltage regularity checks, and housing inspection</strong> to ensure consistent performance. You get OEM reliability without dealer pricing, backed by real technical support.
                                     </p>
                                     <h3 className="text-base lg:text-xl font-bold text-slate-800">Why Our Used Alternators Are Better</h3>
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 lg:gap-3">

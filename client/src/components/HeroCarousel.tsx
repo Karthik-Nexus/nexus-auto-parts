@@ -88,7 +88,7 @@ export default function HeroCarousel() {
                 Your Source for Multi-Brand OEM Auto Parts and Accessories
               </p>
               <p className="text-sm text-white/80 leading-relaxed px-2">
-                Save up to 70% on over 300 brands and 20 million auto parts at NexusAutoParts! Don’t miss out – shop now for unbeatable deals on car parts and accessories.
+                Save up to 70% on over 300 brands and 20 million auto parts at Nexus Auto Parts LLC! Don’t miss out – shop now for unbeatable deals on car parts and accessories.
               </p>
 
               <div className="flex flex-col items-center gap-3 mt-4">
