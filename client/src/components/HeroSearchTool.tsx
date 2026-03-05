@@ -83,7 +83,7 @@ export default function HeroSearchTool({ defaultPart = '' }: HeroSearchToolProps
                         </Button>
                     </a>
 
-                    <a href="mailto:sales@nexusautopartsus.com">
+                    <a href="mailto:sales@nexususedautoparts.com">
                         <Button variant="outline" className="w-full border-white/30 text-white hover:bg-white/10 font-bold h-12 text-base rounded-full">
                             Email Us
                         </Button>

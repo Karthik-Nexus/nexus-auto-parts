@@ -59,7 +59,7 @@ export async function sendLeadEmails(lead: LeadData) {
 
     // 2. Customer Confirmation (From Sales -> To Customer)
     const customerMailOptions = {
-        from: `"Nexus Auto Parts" <${salesUser}>`,
+        from: `"Nexus Used Auto Parts" <${salesUser}>`,
         to: lead.email,
         subject: 'We Received Your Parts Request!',
         html: `
@@ -72,7 +72,7 @@ export async function sendLeadEmails(lead: LeadData) {
                 <p>If you need immediate assistance, please call us at:</p>
                 <h3 style="color: #d32f2f;">866-317-1665</h3>
                 <br />
-                <p>Best Regards,<br/>Nexus Auto Parts Team</p>
+                <p>Best Regards,<br/>Nexus Used Auto Parts Team</p>
             </div>
         `
     };

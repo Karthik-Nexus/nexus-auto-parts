@@ -93,8 +93,8 @@ export default function Contact() {
                                         <Mail className="w-6 h-6 text-blue-600" />
                                     </div>
                                     <h3 className="font-bold text-slate-900 mb-2">Email Us</h3>
-                                    <a href="mailto:sales@nexusautopartsus.com" className="text-blue-600 font-medium hover:underline">
-                                        sales@nexusautopartsus.com
+                                    <a href="mailto:sales@nexususedautoparts.com" className="text-blue-600 font-medium hover:underline">
+                                        sales@nexususedautoparts.com
                                     </a>
                                     <p className="text-slate-500 text-sm mt-2">Response within 24 hours</p>
                                 </CardContent>

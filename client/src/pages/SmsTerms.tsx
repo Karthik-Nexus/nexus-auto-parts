@@ -50,8 +50,8 @@ export default function SmsTerms() {
                                 </div>
                                 <div>
                                     <p className="text-sm text-slate-500 font-medium">Email Us</p>
-                                    <a href="mailto:sales@nexusautopartsusa.com" className="text-lg font-bold text-slate-900 hover:text-primary transition-colors">
-                                        sales@nexusautopartsusa.com
+                                    <a href="mailto:sales@nexususedautoparts.com" className="text-lg font-bold text-slate-900 hover:text-primary transition-colors">
+                                        sales@nexususedautoparts.com
                                     </a>
                                 </div>
                             </div>
@@ -69,7 +69,7 @@ export default function SmsTerms() {
                     </CardHeader>
                     <CardContent className="p-6 space-y-4">
                         <p className="text-slate-600">
-                            If you have consented to receive text messages from Nexus Auto Parts LLC, you may receive messages related to the following:
+                            If you have consented to receive text messages from Nexus Used Auto Parts LLC, you may receive messages related to the following:
                         </p>
                         <ul className="grid sm:grid-cols-2 gap-3">
                             {[
@@ -96,7 +96,7 @@ export default function SmsTerms() {
                         </CardTitle>
                     </CardHeader>
                     <CardContent className="p-6 space-y-4">
-                        <p className="text-slate-600">You may opt-in to receive SMS messages from Nexus Auto Parts LLC in the following ways:</p>
+                        <p className="text-slate-600">You may opt-in to receive SMS messages from Nexus Used Auto Parts LLC in the following ways:</p>
                         <ul className="space-y-3">
                             <li className="flex items-center gap-3">
                                 <span className="bg-primary/10 text-primary p-1 rounded">1</span>
@@ -122,8 +122,8 @@ export default function SmsTerms() {
                         <p className="text-slate-600 mb-4">
                             If you are experiencing any issues, you can reply with the keyword <strong>HELP</strong>. Or, you can get help directly from us at our website:
                         </p>
-                        <a href="https://www.nexusautopartsusa.com" className="text-primary font-medium hover:underline flex items-center gap-2">
-                            www.nexusautopartsusa.com
+                        <a href="https://www.nexususedautoparts.com" className="text-primary font-medium hover:underline flex items-center gap-2">
+                            www.nexususedautoparts.com
                         </a>
                     </CardContent>
                 </Card>
